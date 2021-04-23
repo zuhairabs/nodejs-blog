@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Area | Posts</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+      if(!localStorage.getItem('tokken')){window.location.replace(`./login.html`)}
+    </script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="../js/fetch/api.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AdminStrap</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Dashboard</a></li> 
+            <li><a href="post.html">Blogs</a></li>
+            <li><a href="comments.html">Comments</a></li>
+            <li><a href="categories.html">Categories</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Welcome, Admin</a></li>
+            <li><a id="logout">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+  </nav>
+
+  <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Blog <small>Manage Your Site</small></h1>
+          </div>
+         
+        </div>
+      </div>
+  </header>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="./index.html">Dashboard</a></li>
+          <li class="active">Posts</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="index.html" class="list-group-item active main-color-bg">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
+              </a>
+              <a href="post.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Blogs </a>
+              <a href="gallery.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Gallery</a>
+              <a href="notification.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Notification</a>
+              <a href="contact.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Contact</a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="panel panel-default">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel-heading main-color-bg">
+                  <h3 class="panel-title">Add new Post</h3>
+                </div>
+                <div class="panel-body">
+                <form id="form">
+                  <div class="form-group">
+                    <label for="example">Blog Image</label>
+                    <input type="file" class="form-control" id="fileinput" aria-describedby="emailHelp" placeholder="title.....">
+                   </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Blog Title</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="title.....">
+                   </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Blog Content</label>
+                    <div id="toolbox"></div>
+                    <div id="editor"></div>
+                    
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+              </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- Website Overview -->
+    <div class="panel panel-default">
+      <div class="panel-heading main-color-bg">
+        <h3 class="panel-title">Blogs</h3>
+      </div>
+      <div class="panel-body">
+        <br>
+        <table id="postfiled" class="table table-striped table-hover" >
+        </table>
+      </div>
+    </div>    
+    </div>
+    </section>
+
+    <footer id="footer">
+      <p>Copyright AdminStrap, &copy; 2017</p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/showBlogs.js"></script>
+    
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+<script>
+
+const form = document.querySelector('#form')
+const titlefield = document.querySelector('#title')
+
+
+var toolboxOptions = [
+    ['bold', 'italic', 'underline', 'strike'],
+    ['blockquote', 'code-block'],
+    [{'header': [1,2,3,4,5,6,false]}],
+    [{'list':'ordered'},{'list':'bullet'}],
+    [{'script':'sub'},{'script':'super'}],
+    [{'indent':'-1'},{"indent":'+1'}],
+    [{'direction':'rtl'}],
+    [{'size':['small',false,'large','huge']}],
+    [{'font': []}],
+    [{'align':[]}]
+]
+
+  
+
+var quill = new Quill('#editor', {
+    modules:{
+        toolbar: toolboxOptions
+    },
+    theme: 'snow'
+})
+
+
+const input = document.querySelector('#fileinput');
+form.addEventListener('submit', e => {
+  
+      e.preventDefault();
+
+      var contentfield = JSON.stringify(quill.getContents());
+      
+
+      const ref = firebase.storage().ref();
+      const file = document.querySelector("#fileinput").files[0];
+
+      const name = new Date()+'_'+file.name;
+      const metadata = {
+          contentType: file.type
+         
+      }
+      imageType = metadata.contentType.split("/")[0];
+      console.log(imageType)
+
+      const task = ref.child(name).put(file,metadata);
+      task.then(snapshot =>{
+        return snapshot.ref.getDownloadURL();
+      }).then( url =>{
+
+       let blog = {};
+       blog.title = titlefield.value;
+       blog.content = contentfield;
+       blog.media = url
+       console.log(blog)
+
+      fetch(`${api}/post`, {
+      method: 'POST',
+      headers: {
+       'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(blog),
+     })
+    .then(response => response.json())
+    .then(data => {
+      window.location.replace(`./post.html`)
+    })
+    .catch((error) => {
+    console.error('Error:', error);
+    });
+})
+})
+
+</script>
+    <script>
+      
+      const auth = JSON.parse(localStorage.getItem('tokken'));
+      const logout = document.querySelector("#logout");
+      logout.addEventListener('click', e =>{
+        e.preventDefault();
+        localStorage.removeItem("tokken");
+        window.location.replace(`./login.html`)
+      })
+  
+     </script>
+  </body>
+</html>

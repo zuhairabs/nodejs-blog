@@ -1,0 +1,35 @@
+.notificationHeader {
+  display: flex !important;
+  justify-content: space-between !important;
+  background: rgb(46, 45, 45);
+}
+
+.notificationHeader a {
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.notificationHeading{
+  padding: 30px;
+
+    text-align: center;
+     font-size: 30px;
+}
+
+.notificationBtn{
+  margin-top:30px
+}
+
+
+.PackageBtnWrapper{
+  margin: auto;
+  align-items: center;
+}
+
+
+.notificationParagaph{
+  font-size: 17px !important;
+}

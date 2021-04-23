@@ -1,0 +1,25 @@
+<script src="../js/fetch/api.js"></script>
+<script>
+  let urlParams = window.location.search;
+  let paramsObject = {};
+
+  let params = urlParams.split("&");
+
+  paramsObject.id = params[0].slice(4);
+  paramsObject.type = params[1].split("=")[1];
+  
+  console.log(`${api}/${paramsObject.type}/${paramsObject.id}`)
+
+  fetch(`${api}/${paramsObject.type}/${paramsObject.id}`, {
+    method: 'DELETE',
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    
+  }).then(() => window.location.replace(`${paramsObject.type}.html`))
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+</script>

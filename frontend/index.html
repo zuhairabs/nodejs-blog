@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Blog</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Unicat project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/blog.css">
+<link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<script src='./js/fetch/api.js'></script>
+</head>
+<body>
+
+<div class="super_container">
+
+<header class="header">
+			
+	 
+<div class="top_bar bg-primary">
+<div class="top_bar_container">
+	<div class="container">
+	<div class="row">
+		<div class="col">
+		<div
+			class="top_bar_content d-flex flex-row align-items-center justify-content-center"
+		>
+			<ul class="top_bar_contact_list">
+			<li><div class="question">Follow us on social media</div></li>
+			<li>
+				<i class="fa fa-phone" aria-hidden="true"></i>
+			</li>
+			<li>
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>
+			</li>
+			<li>
+				<i class="fa fa-instagram"></i>
+			</li>
+			<li>
+				<i class="fa fa-facebook-f"></i>
+			</li>
+			<li>
+				<i class="fa fa-youtube"></i>
+			</li>
+			<li>
+				<i class="fa fa-twitter"></i>
+			</li>
+
+			
+		</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+
+<div  style="background:#4e9ff5 !important" class="header_container">
+<div class="container">
+	<div class="row">
+	<div class="col">
+		<div
+		class="header_content d-flex flex-row align-items-center justify-content-start"
+		>
+		<div class="logo_container">
+			<a href="#">
+			<div class="logo_text">
+				<img width="120" src="images/logo.png" alt="" />
+			</div>
+			</a>
+		</div>
+		<nav class="main_nav_contaner ml-auto">
+			<ul class="main_nav">
+			<li  ><a class="text-white" href="index.html">Home</a></li>
+			<li><a  class="text-white" href='index.html?cat="art"'>Art & Design</a></li>
+			<li><a  class="text-white" href='index.html?cat="business"'>Business</a></li>
+			<li><a  class="text-white" href='index.html?cat="software"'>IT & Software</a></li>
+			<li><a  class="text-white" href='index.html?cat="programming"'>Programming</a></li>
+			</ul>
+		<div class="search_button">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			</div> 
+
+			<!-- Hamburger -->
+
+			<div class="hamburger menu_mm">
+			<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+			</div>
+		</nav>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+
+<div class="header_search_container">
+<div class="container">
+	<div class="row">
+	<div class="col">
+		<div
+		class="header_search_content d-flex flex-row align-items-center justify-content-end"
+		>
+		<form action="#" class="header_search_form">
+			<input
+			type="search"
+			class="search_input"
+			placeholder="Search"
+			required="required"
+			/>
+			<button
+			class="header_search_button d-flex flex-column align-items-center justify-content-center"
+			>
+			<i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+		</form>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+</header>
+
+<div
+  class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400"
+>
+  <div class="menu_close_container">
+	<div class="menu_close">
+	  <div></div>
+	  <div></div>
+	</div>
+  </div>
+  <div class="search">
+	<form action="#" class="header_search_form menu_mm">
+	  <input
+		type="search"
+		class="search_input menu_mm"
+		placeholder="Search"
+		required="required"
+	  />
+	  <button
+		class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm"
+	  >
+		<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+	  </button>
+	</form>
+  </div>
+  <nav class="menu_nav">
+	<ul class="menu_mm">
+	  <li class="menu_mm"><a href="index.html">Home</a></li>
+	  <li class="menu_mm"><a href='index.html?cat="art"'>Art & Design</a></li>
+	  <li class="menu_mm"><a  href='index.html?cat="business"'>Business</a></li>
+	  <li class="menu_mm"><a href='index.html?cat="software"'>IT & Software</a></li>
+	  <li class="menu_mm"><a  href='index.html?cat="programming"'>Programming</a></li> 
+	</ul>
+  </nav>
+</div>
+
+
+<div class="home">
+	<div class="breadcrumbs_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+</div>
+	
+
+<div class="blog">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="result" class="blog_post_container">
+					<h3>Loading....</h3>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div style="background: rgb(129, 20, 20)" class="newsletter">
+<div
+	class="newsletter_background parallax-window"
+	data-parallax="scroll"
+	data-image-src="images/newsletter.jpg"
+	data-speed="0.8"
+></div>
+<div class="container">
+	<div class="row">
+	<div class="col">
+		<div
+		class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start"
+		>
+		<!-- Newsletter Content -->
+		<div class="newsletter_content text-lg-left text-center">
+			<div class="newsletter_title">
+			sign up for news and offers
+			</div>
+			<div class="newsletter_subtitle">
+			Subcribe to lastest smartphones news & great deals
+			</div>
+		</div>
+
+		<!-- Newsletter Form -->
+		<div class="newsletter_form_container ml-lg-auto">
+			<form
+			action="#"
+			id="newsletter_form"
+			class="newsletter_form d-flex flex-row align-items-center justify-content-center"
+			>
+			<input
+				type="email"
+				class="newsletter_input"
+				placeholder="Your Email"
+				required="required"
+			/>
+			<button type="submit" class="newsletter_button">
+				subscribe
+			</button>
+			</form>
+		</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+	 
+<footer class="footer">
+<div class="footer_background"> </div>
+<div class="container">
+	<div class="row footer_row">
+	<div class="col">
+		<div class="footer_content">
+		<div class="row">
+			<div class="col-lg-4 footer_col">
+			<div class="footer_title">About Us</div><br/><br/>
+			<!-- Footer About -->
+			<div class="footer_section footer_about">
+				<div class="footer_logo_container">
+				<a href="#">
+					<div class="footer_logo_text">
+					<img width="120px"  src="images/logo.jpeg" alt="">
+					</div>
+				</a>
+				</div>
+				<div class="footer_about_text">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+					when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
+				</div>
+				
+			</div>
+			</div>
+
+			<div class="col-lg-4 footer_col">
+			<!-- Footer links -->
+			<div class="footer_section footer_links">
+				<div class="footer_title">Useful Links</div>
+				<div class="footer_links_container">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Features</a></li>
+					<li><a href="#">Courses</a></li>
+					<li><a href="#">Events</a></li>
+					<li><a href="#">Gallery</a></li>
+					<li><a href="#">FAQs</a></li>
+				</ul>
+				</div>
+			</div>
+			
+			<!-- Social Media-->
+			
+			<div class="footer_social" style="padding-left:70px; margin-top:50px;">
+				<ul>
+					<li>
+					<a href="https://www.facebook.com/groups/"
+						><i class="fa fa-facebook" aria-hidden="true"></i
+					></a>
+					</li>
+					<li>
+					<a href="https://twitter.com/"
+						><i class="fa fa-twitter" aria-hidden="true"></i
+					></a>
+					</li>
+					<li>
+					<a href="https://play.google.com/store/apps/"
+						><i
+						class="fa fa-android"
+						aria-hidden="true"
+						></i
+					></a>
+					</li>
+					<li>
+					<a href="#"
+						><i class="fa fa-linkedin" aria-hidden="true"></i
+					></a>
+					</li>
+					<li>
+					<a href="#"
+						><i class="fa fa-instagram" aria-hidden="true"></i
+					></a>
+					</li>
+				</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-4 footer_col">
+			<!-- Footer Contact -->
+			<div class="footer_section footer_contact">
+				<div class="footer_title">CONTACT WITH US</div>
+				<div class="footer_contact_info">
+				<ul>
+					<li><i class="fa fa-envelope" style="font-size:20px;" aria-hidden="true"></i> demo@gmail.com</li>
+					<li><i class="fa fa-phone" style="font-size:20px;" aria-hidden="true"></i> 9999999999 </li>
+					<li><i class="fa fa-map-marker" style="font-size:20px;" aria-hidden="true"></i> No. 02, dummy Complex, dummy Circle, dummy East, Near dummy East Gate, dummy - 000001 </li>
+				</ul>
+				</div>
+			</div>
+			</div>
+			
+			
+		</div>
+		</div>
+	</div>
+	</div>
+
+
+
+	<div class="row copyright_row">
+	<div class="col">
+		<div
+		class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start"
+		>
+		<div class="cr_text" style="text-align:center;">
+			
+			Copyright &copy;
+			<script>
+			document.write(new Date().getFullYear());
+			</script> Blog WebApp, &nbsp; All rights reserved &nbsp; || &nbsp; made with &nbsp; <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;  by &nbsp; 
+			<a href="http://desiotaku-36c59.web.app/" target="_blank">Vastav Deigital</a>
+			
+		</div>
+		
+		</div>
+	</div>
+	</div>
+</div>
+</footer>
+     
+</div>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/masonry/masonry.js"></script>
+<script src="plugins/video-js/video.min.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script id="jsscript"></script>
+<script>
+
+  const result = document.querySelector("#result")
+  fetch(`${api}/posts`)
+  .then(response => response.json())
+  .then(data => { 
+	      showData(data); 
+		  storeInLocalStorage(data);
+		})
+  .then(() => { 
+	    setTimeout(() =>{ 
+		  addScripts(); 
+	    }, 1000);
+	});
+
+  function showData(data){
+      let output = '';
+	  data.forEach(post =>{
+		  output += `<div class='blog_post trans_200'>
+						<div class='blog_post_image'>
+						  <img src="${post.media}" alt="">
+						</div>
+						<div class="blog_post_body">
+							<div class="blog_post_title"><a href="blog_single.html?id=${post.postId}">${post.title}</a></div>
+							<div class="blog_post_meta">
+								<ul>
+									<li><a href="#">admin</a></li>
+									<li><a href="#">${new Date(post.createdAt).toDateString()}</a></li>
+								</ul>
+							</div>
+							<div class="blog_post_text">
+								
+							</div>
+							<a class="btn btn-danger" href="blog_single.html?id=${post.postId}"> read more</a>
+						</div>
+					</div>`;
+    })
+    result.innerHTML = output;
+  }
+
+	function storeInLocalStorage(data){
+		let latestPost = data.slice(0,3)
+		localStorage.setItem('latestPost', JSON.stringify(latestPost));
+	}
+
+	function addScripts(){
+		const jsscript = document.querySelector("#jsscript");
+		jsscript.src = `js/blog.js`;
+	}
+</script>
+</body>
+</html>

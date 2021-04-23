@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Blog Single</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Unicat project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+<link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src='./js/fetch/api.js'></script>
+</head>
+<body>
+
+<div class="super_container">
+
+
+<header class="header">
+		
+	
+	<div class="top_bar bg-primary">
+	<div class="top_bar_container">
+		<div class="container">
+		<div class="row">
+			<div class="col">
+			<div
+				class="top_bar_content d-flex flex-row align-items-center justify-content-center"
+			>
+				<ul class="top_bar_contact_list">
+				<li><div class="question">Follow us on social media</div></li>
+				<li>
+					<i class="fa fa-phone" aria-hidden="true"></i>
+				</li>
+				<li>
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+				</li>
+				<li>
+					<i class="fa fa-instagram"></i>
+				</li>
+				<li>
+					<i class="fa fa-facebook-f"></i>
+				</li>
+				<li>
+					<i class="fa fa-youtube"></i>
+				</li>
+				<li>
+					<i class="fa fa-twitter"></i>
+				</li>
+	
+				
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+	
+	
+	<div  style="background:#4e9ff5 !important" class="header_container">
+	<div class="container">
+		<div class="row">
+		<div class="col">
+			<div
+			class="header_content d-flex flex-row align-items-center justify-content-start"
+			>
+			<div class="logo_container">
+				<a href="#">
+				<div class="logo_text">
+					<img width="120" src="images/logo.png" alt="" />
+				</div>
+				</a>
+			</div>
+			<nav class="main_nav_contaner ml-auto">
+				<ul class="main_nav">
+				<li  ><a class="text-white" href="index.html">Home</a></li>
+				<li><a  class="text-white" href='index.html?cat="art"'>Art & Design</a></li>
+				<li><a  class="text-white" href='index.html?cat="business"'>Business</a></li>
+				<li><a  class="text-white" href='index.html?cat="software"'>IT & Software</a></li>
+				<li><a  class="text-white" href='index.html?cat="programming"'>Programming</a></li>
+				</ul>
+			<div class="search_button">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				</div> 
+	
+				<!-- Hamburger -->
+	
+				<div class="hamburger menu_mm">
+				<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+				</div>
+			</nav>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+	
+	
+	<div class="header_search_container">
+	<div class="container">
+		<div class="row">
+		<div class="col">
+			<div
+			class="header_search_content d-flex flex-row align-items-center justify-content-end"
+			>
+			<form action="#" class="header_search_form">
+				<input
+				type="search"
+				class="search_input"
+				placeholder="Search"
+				required="required"
+				/>
+				<button
+				class="header_search_button d-flex flex-column align-items-center justify-content-center"
+				>
+				<i class="fa fa-search" aria-hidden="true"></i>
+				</button>
+			</form>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+</header>		
+		
+<div
+	class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400"
+>
+	<div class="menu_close_container">
+	<div class="menu_close">
+		<div></div>
+		<div></div>
+	</div>
+	</div>
+	<div class="search">
+	<form action="#" class="header_search_form menu_mm">
+		<input
+		type="search"
+		class="search_input menu_mm"
+		placeholder="Search"
+		required="required"
+		/>
+		<button
+		class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm"
+		>
+		<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+		</button>
+	</form>
+	</div>
+	<nav class="menu_nav">
+	<ul class="menu_mm">
+		<li class="menu_mm"><a href="index.html">Home</a></li>
+		<li class="menu_mm"><a href='index.html?cat="art"'>Art & Design</a></li>
+		<li class="menu_mm"><a  href='index.html?cat="business"'>Business</a></li>
+		<li class="menu_mm"><a href='index.html?cat="software"'>IT & Software</a></li>
+		<li class="menu_mm"><a  href='index.html?cat="programming"'>Programming</a></li> 
+	</ul>
+	</nav>
+</div>	
+		
+<div class="home">
+	<div class="breadcrumbs_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="index.html">Blog single</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+</div>
+
+<div class="blog">
+	<div class="container">
+		<div class="row">
+
+			<!-- Blog Content -->
+			<div id="result" class="col-lg-8">
+			<div class="blog_content">
+					<div id="title" class="blog_title"></div>
+					<div class="blog_meta">
+						<ul>
+							<li >Post on <a href="#" id="date"></a></li>
+							<li>By <a href="#">admin</a></li>
+						</ul>
+					</div>
+					<div class="blog_image"><img id="media" alt=""></div>
+					<div id="content"></div>
+				</div>
+				<div class="blog_extra d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+					<div class="blog_tags">
+						<span>Tags: </span>
+						<ul>
+							<li><a href="#">Education</a>, </li>
+							<li><a href="#">Math</a>, </li>
+							<li><a href="#">Food</a>, </li>
+							<li><a href="#">Schools</a>, </li>
+							<li><a href="#">Religion</a>, </li>
+						</ul>
+					</div>
+					<div class="blog_social ml-lg-auto">
+						<span>Share: </span>
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- Comments -->
+				<div class="comments_container">
+					<div class="comments_title"><span id="totalComment">30</span> Comments</div>
+					<ul class="comments_list" id="commentSection">
+					
+					</ul>
+					<div class="add_comment_container">
+						<div class="add_comment_title">Write a comment</div>
+						<div class="add_comment_text">Your email address will not be published. Required fields are marked *</div>
+						<form id="commentForm" class="comment_form">
+							<div>
+								<div class="form_title">Review*</div>
+								<textarea id="commentTextarea" class="comment_input comment_textarea" required="required"></textarea>
+							</div>
+							<div class="row">
+								<div class="col-md-6 input_col">
+									<div class="form_title">Name*</div>
+									<input id="namefield" type="text" class="comment_input" required="required">
+								</div>
+								<div class="col-md-6 input_col">
+									<div class="form_title">Email*</div>
+									<input id="emailfield" type="text" class="comment_input" required="required">
+								</div>
+							</div>
+							<div class="comment_notify">
+								<input type="checkbox" id="checkbox_notify" name="regular_checkbox" class="regular_checkbox checkbox_account" checked>
+								<label for="checkbox_notify"><i class="fa fa-check" aria-hidden="true"></i></label>
+								<span>Notify me of new posts by email</span>
+							</div>
+							<div>
+								<button type="submit" class="comment_button trans_200">submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- Blog Sidebar -->
+			<div class="col-lg-4">
+				<div class="sidebar">
+
+					<!-- Categories -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Categories</div>
+						<div class="sidebar_categories">
+							<ul class="categories_list" id="categoriesList">
+								
+							</ul>
+						</div>
+					</div>
+
+					<!-- Latest News -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Latest Courses</div>
+						<div id="latestPostElement" class="sidebar_latest">
+						
+
+						</div>
+					</div>
+
+					<!-- Gallery -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Instagram</div>
+						<div class="sidebar_gallery">
+							<ul class="gallery_items d-flex flex-row align-items-start justify-content-between flex-wrap">
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_1_large.jpg">
+										<img src="images/gallery_1.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_2_large.jpg">
+										<img src="images/gallery_2.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_3_large.jpg">
+										<img src="images/gallery_3.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_4_large.jpg">
+										<img src="images/gallery_4.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_5_large.jpg">
+										<img src="images/gallery_5.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_6_large.jpg">
+										<img src="images/gallery_6.jpg" alt="">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Tags -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Tags</div>
+						<div class="sidebar_tags">
+							<ul class="tags_list">
+								<li><a href="#">creative</a></li>
+								<li><a href="#">unique</a></li>
+								<li><a href="#">photography</a></li>
+								<li><a href="#">ideas</a></li>
+								<li><a href="#">wordpress</a></li>
+								<li><a href="#">startup</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Banner -->
+					<div class="sidebar_section">
+						<div class="sidebar_banner d-flex flex-column align-items-center justify-content-center text-center">
+							<div class="sidebar_banner_background" style="background-image:url(images/banner_1.jpg)"></div>
+							<div class="sidebar_banner_overlay"></div>
+							<div class="sidebar_banner_content">
+								<div class="banner_title">Free Book</div>
+								<div class="banner_button"><a href="#">download now</a></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+<div style="background: rgb(129, 20, 20)" class="newsletter">
+<div
+	class="newsletter_background parallax-window"
+	data-parallax="scroll"
+	data-image-src="images/newsletter.jpg"
+	data-speed="0.8"
+></div>
+<div class="container">
+	<div class="row">
+	<div class="col">
+		<div
+		class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start"
+		>
+		<!-- Newsletter Content -->
+		<div class="newsletter_content text-lg-left text-center">
+			<div class="newsletter_title">
+			sign up for news and offers
+			</div>
+			<div class="newsletter_subtitle">
+			Subcribe to lastest smartphones news & great deals we offer
+			</div>
+		</div>
+
+		<!-- Newsletter Form -->
+		<div class="newsletter_form_container ml-lg-auto">
+			<form
+			action="#"
+			id="newsletter_form"
+			class="newsletter_form d-flex flex-row align-items-center justify-content-center"
+			>
+			<input
+				type="email"
+				class="newsletter_input"
+				placeholder="Your Email"
+				required="required"
+			/>
+			<button type="submit" class="newsletter_button">
+				subscribe
+			</button>
+			</form>
+		</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+	<!-- Footer -->
+<footer class="footer">
+	<div class="footer_background"> </div>
+	<div class="container">
+		<div class="row footer_row">
+		<div class="col">
+			<div class="footer_content">
+			<div class="row">
+				<div class="col-lg-4 footer_col">
+				<div class="footer_title">About Us</div><br/><br/>
+				<!-- Footer About -->
+				<div class="footer_section footer_about">
+					<div class="footer_logo_container">
+					<a href="#">
+						<div class="footer_logo_text">
+						<img width="120px"  src="images/logo.jpeg" alt="">
+						</div>
+					</a>
+					</div>
+					<div class="footer_about_text">
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+						when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					</p>
+					</div>
+					
+				</div>
+				</div>
+	
+				<div class="col-lg-4 footer_col">
+				<!-- Footer links -->
+				<div class="footer_section footer_links">
+					<div class="footer_title">Useful Links</div>
+					<div class="footer_links_container">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Features</a></li>
+						<li><a href="#">Courses</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Gallery</a></li>
+						<li><a href="#">FAQs</a></li>
+					</ul>
+					</div>
+				</div>
+				
+				<!-- Social Media-->
+				
+				<div class="footer_social" style="padding-left:70px; margin-top:50px;">
+					<ul>
+						<li>
+						<a href="https://www.facebook.com/groups/"
+							><i class="fa fa-facebook" aria-hidden="true"></i
+						></a>
+						</li>
+						<li>
+						<a href="https://twitter.com/"
+							><i class="fa fa-twitter" aria-hidden="true"></i
+						></a>
+						</li>
+						<li>
+						<a href="https://play.google.com/store/apps/"
+							><i
+							class="fa fa-android"
+							aria-hidden="true"
+							></i
+						></a>
+						</li>
+						<li>
+						<a href="#"
+							><i class="fa fa-linkedin" aria-hidden="true"></i
+						></a>
+						</li>
+						<li>
+						<a href="#"
+							><i class="fa fa-instagram" aria-hidden="true"></i
+						></a>
+						</li>
+					</ul>
+					</div>
+				</div>
+	
+				<div class="col-lg-4 footer_col">
+				<!-- Footer Contact -->
+				<div class="footer_section footer_contact">
+					<div class="footer_title">CONTACT WITH US</div>
+					<div class="footer_contact_info">
+					<ul>
+						<li><i class="fa fa-envelope" style="font-size:20px;" aria-hidden="true"></i> demo@gmail.com</li>
+						<li><i class="fa fa-phone" style="font-size:20px;" aria-hidden="true"></i> 9999999999 </li>
+						<li><i class="fa fa-map-marker" style="font-size:20px;" aria-hidden="true"></i> No. 02, dummy Complex, dummy Circle, dummy East, Near dummy East Gate, dummy - 000001 </li>
+					</ul>
+					</div>
+				</div>
+				</div>
+				
+				
+			</div>
+			</div>
+		</div>
+		</div>
+	
+	
+	
+		<div class="row copyright_row">
+		<div class="col">
+			<div
+			class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start"
+			>
+			<div class="cr_text" style="text-align:center;">
+				
+				Copyright &copy;
+				<script>
+				document.write(new Date().getFullYear());
+				</script> Blog WebApp, &nbsp; All rights reserved &nbsp; || &nbsp; made with &nbsp; <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;  by &nbsp; 
+				<a href="http://desiotaku-36c59.web.app/" target="_blank">Vastav Deigital</a>
+				
+			</div>
+			
+			</div>
+		</div>
+		</div>
+	</div>
+</footer>
+			 
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="js/blog_single.js"></script>
+
+<script>
+let urlParams = window.location.search;
+let id = urlParams.slice(4);
+
+let title = document.querySelector("#title");
+let date = document.querySelector("#date");
+let media = document.querySelector('#media');
+let quill = new Quill('#content')
+
+
+const categoryCount = document.querySelector('#categoriesList')
+const latestPostElement = document.querySelector('#latestPostElement');
+const latestPost = JSON.parse(localStorage.getItem('latestPost'));
+  
+let commentSection = document.querySelector("#commentSection");
+let commentForm = document.querySelector("#commentForm");
+let commentFeild = document.querySelector("#commentTextarea");
+let commentNameFeild = document.querySelector("#namefield");
+let commentEmailFeild = document.querySelector("#emailfield");
+
+
+
+
+fetch(`${api}/post/${id}`)
+.then(response => response.json())
+.then(data => { 
+  
+  showData(data); 
+  latestPostFunction()
+})
+
+fetch(`${api}/categoriesCount`)
+.then(response => response.json())
+.then(data => { 
+  categoriesDetails(data); 
+	return console.log(data)
+})
+
+fetch(`${api}/comments/${id}`)
+.then(response => response.json())
+.then(data => { 
+commentDisplay(data); 
+})
+
+
+function showData(data){
+	title.innerHTML = data.title;
+	date.innerHTML = new Date(data.createdAt).toDateString();
+	media.src= data.media
+	quill.setContents(JSON.parse(data.content))
+}
+
+   
+function categoriesDetails(data){
+    let list = "";
+	data.forEach(category =>{
+		list += `<li><a href="#" class="clearfix">${category.name}<span>(${category.count})</span></a></li>`;
+    })
+    categoryCount.innerHTML = list;
+}
+
+
+function latestPostFunction(){
+	let posts = "";
+	latestPost.forEach(p =>{
+	   posts += `<div class="latest d-flex flex-row align-items-start justify-content-start">
+					<div class="latest_image"><div><img src="${p.media}" alt=""></div></div>
+					<div class="latest_content">
+						<div class="latest_title"><a href="index.html">${p.title}</a></div>
+						<div class="latest_date">${new Date(p.createdAt).toDateString()}</div>
+					</div>
+				</div>`;
+   })
+   latestPostElement.innerHTML = posts
+}
+   
+
+function commentDisplay(data){
+	let comment = "";
+	data.forEach(cmt =>{
+		comment += `	<li>
+							<div class="comment_item d-flex flex-row align-items-start jutify-content-start">
+								<div class="comment_content">
+									<div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
+										<div class="comment_author"><a href="#">${cmt.name}</a></div>
+										<div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
+										<div class="comment_time ml-auto">${new Date(cmt.createdAt).toDateString()}</div>
+									</div>
+									<div class="comment_text">
+										<p>${cmt.comment}</p>
+									</div>
+									<div class="comment_extras d-flex flex-row align-items-center justify-content-start">
+										<div class="comment_extra comment_likes"><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span>108</span></a></div>
+										<div class="comment_extra comment_reply"><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>Reply</span></a></div>
+									</div>
+								</div>
+							</div>
+						</li>	`;
+    })
+    commentSection.innerHTML = comment;
+}
+
+
+
+commentForm.addEventListener('submit', e => {
+  e.preventDefault();
+  let comment = {};
+  comment.comment = commentTextarea.value;
+  comment.name = commentNameFeild.value;
+  comment.email = commentEmailFeild.value;
+
+  fetch(`${api}/comments/${id}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(comment),
+  })
+  .then(response => response.json())
+  .then(data => {
+    window.location.replace(`./blog_single.html?id=${id}`)
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+})
+</script>
+
+
+</body>
+</html>
